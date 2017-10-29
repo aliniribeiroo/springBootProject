@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.model.employee;
+package com.aliniribeiro.api.model.employee;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -20,9 +20,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.aliniribeiro.api.jpapersistence.common.ProfileEnum;
-import com.aliniribeiro.api.jpapersistence.model.company.CompanyEntity;
-import com.aliniribeiro.api.jpapersistence.model.realese.RealeseEntity;
+import com.aliniribeiro.api.common.ProfileEnum;
+import com.aliniribeiro.api.model.company.CompanyEntity;
+import com.aliniribeiro.api.model.realese.RealeseEntity;
 
 @Entity
 @Table(name = "employee")

@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.aliniribeiro.api.common.PasswordCommon;
-import com.aliniribeiro.api.jpapersistence.model.company.CompanyEntity;
-import com.aliniribeiro.api.jpapersistence.model.company.CompanyRepository;
+import com.aliniribeiro.api.model.company.CompanyEntity;
+import com.aliniribeiro.api.model.company.CompanyRepository;
 
 @SpringBootApplication
 public class SpringBootFirstProjectApplication {

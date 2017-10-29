@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.model.company;
+package com.aliniribeiro.api.model.company;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

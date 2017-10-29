@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.model.realese;
+package com.aliniribeiro.api.model.realese;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +18,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.aliniribeiro.api.jpapersistence.model.employee.EmployeeEntity;
+import com.aliniribeiro.api.model.employee.EmployeeEntity;
 
 @Entity
 @Table(name = "realese")

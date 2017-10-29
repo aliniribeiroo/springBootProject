@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.model.company;
+package com.aliniribeiro.api.model.company;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +16,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.aliniribeiro.api.jpapersistence.model.employee.EmployeeEntity;
+import com.aliniribeiro.api.model.employee.EmployeeEntity;
 
 @Entity
 @Table(name = "company")

@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.common;
+package com.aliniribeiro.api.common;
 
 public enum ProfileEnum {
 	ROLE_ADMIN,

@@ -1,4 +1,8 @@
-package com.aliniribeiro.api.jpapersistence.dtos;
+package com.aliniribeiro.api.dtos;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 public class CompanyDto {
 
@@ -18,6 +22,8 @@ public class CompanyDto {
 		this.id = id;
 	}
 
+	@NotEmpty(message = "A Razão social não pode ser nula.")
+	@Length(min = 5, max = 200, message = "A razão social não deve conter entre 5 e 200 carácteres.")
 	public String getSocialName() {
 		return socialName;
 	}
@@ -26,6 +32,8 @@ public class CompanyDto {
 		this.socialName = socialName;
 	}
 
+	@NotEmpty(message = "CNPJ não deve ser vazio.")
+	@CNPJ(message = "CNPJ inválido")
 	public String getCnpj() {
 		return cnpj;
 	}
