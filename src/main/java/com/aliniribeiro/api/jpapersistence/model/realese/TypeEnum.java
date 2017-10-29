@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.enums;
+package com.aliniribeiro.api.jpapersistence.model.realese;
 
 public enum TypeEnum {
 	START_SHIFT,

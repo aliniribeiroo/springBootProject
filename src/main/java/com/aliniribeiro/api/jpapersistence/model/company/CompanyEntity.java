@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.entities;
+package com.aliniribeiro.api.jpapersistence.model.company;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,15 +16,17 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import com.aliniribeiro.api.jpapersistence.model.employee.EmployeeEntity;
+
 @Entity
 @Table(name = "company")
-public class Company implements Serializable {
+public class CompanyEntity implements Serializable {
 
 	private static final long serialVersionUID = 9054312905365693357L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private int id;
 	
 	@Column(name = "socialname", nullable = false)
 	private String socialName;
@@ -39,17 +41,17 @@ public class Company implements Serializable {
 	private Date updateDate;
 	
 	@OneToMany(mappedBy = "company", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Employee> employees;
+	private List<EmployeeEntity> employees;
 
-	public Company() {
+	public CompanyEntity() {
 
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -85,11 +87,11 @@ public class Company implements Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public List<Employee> getEmployees() {
+	public List<EmployeeEntity> getEmployees() {
 		return employees;
 	}
 
-	public void setEmployees(List<Employee> employees) {
+	public void setEmployees(List<EmployeeEntity> employees) {
 		this.employees = employees;
 	}
 

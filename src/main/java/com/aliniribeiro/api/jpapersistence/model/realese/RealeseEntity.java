@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.entities;
+package com.aliniribeiro.api.jpapersistence.model.realese;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,11 +18,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.aliniribeiro.api.jpapersistence.enums.TypeEnum;
+import com.aliniribeiro.api.jpapersistence.model.employee.EmployeeEntity;
 
 @Entity
 @Table(name = "realese")
-public class Realese implements Serializable {
+public class RealeseEntity implements Serializable {
 
 	private static final long serialVersionUID = 8765692641963787506L;
 
@@ -47,11 +47,11 @@ public class Realese implements Serializable {
 	private Date updateDate;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "type", nullable = false)
-	private TypeEnum type;
+	@Column(name = "realesetype", nullable = false)
+	private TypeEnum realeseType;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Employee employee;
+	private EmployeeEntity employee;
 
 	public Long getId() {
 		return id;
@@ -102,18 +102,18 @@ public class Realese implements Serializable {
 	}
 
 	public TypeEnum getType() {
-		return type;
+		return realeseType;
 	}
 
 	public void setType(TypeEnum type) {
-		this.type = type;
+		this.realeseType = type;
 	}
 
-	public Employee getEmployee() {
+	public EmployeeEntity getEmployee() {
 		return employee;
 	}
 
-	public void setEmployee(Employee employee) {
+	public void setEmployee(EmployeeEntity employee) {
 		this.employee = employee;
 	}
 
@@ -136,7 +136,7 @@ public class Realese implements Serializable {
 	@Override
 	public String toString() {
 		return "Realese [id=" + id + ", date=" + date + ", description=" + description + ", location=" + location
-				+ ", criationDate=" + criationDate + ", updateDate=" + updateDate + ", type=" + type + ", employee="
+				+ ", criationDate=" + criationDate + ", updateDate=" + updateDate + ", type=" + realeseType + ", employee="
 				+ employee + "]";
 	}
 }

@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.jpapersistence.entities;
+package com.aliniribeiro.api.jpapersistence.model.employee;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -20,11 +20,13 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.aliniribeiro.api.jpapersistence.enums.ProfileEnum;
+import com.aliniribeiro.api.jpapersistence.common.ProfileEnum;
+import com.aliniribeiro.api.jpapersistence.model.company.CompanyEntity;
+import com.aliniribeiro.api.jpapersistence.model.realese.RealeseEntity;
 
 @Entity
 @Table(name = "employee")
-public class Employee implements Serializable {
+public class EmployeeEntity implements Serializable {
 
 	private static final long serialVersionUID = 2676777528084821096L;
 	
@@ -64,10 +66,10 @@ public class Employee implements Serializable {
 	private Date updateDate;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Company company;
+	private CompanyEntity company;
 	
 	@OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Realese> realeses;
+	private List<RealeseEntity> realeses;
 
 	public Long getId() {
 		return id;
@@ -157,19 +159,19 @@ public class Employee implements Serializable {
 		this.updateDate = updateDate;
 	}
 
-	public Company getCompany() {
+	public CompanyEntity getCompany() {
 		return company;
 	}
 
-	public void setCompany(Company company) {
+	public void setCompany(CompanyEntity company) {
 		this.company = company;
 	}
 
-	public List<Realese> getRealeses() {
+	public List<RealeseEntity> getRealeses() {
 		return realeses;
 	}
 
-	public void setRealeses(List<Realese> realeses) {
+	public void setRealeses(List<RealeseEntity> realeses) {
 		this.realeses = realeses;
 	}
 
