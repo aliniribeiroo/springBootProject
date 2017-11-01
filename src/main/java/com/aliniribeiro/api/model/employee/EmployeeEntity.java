@@ -20,9 +20,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import com.aliniribeiro.api.common.ProfileEnum;
 import com.aliniribeiro.api.model.company.CompanyEntity;
 import com.aliniribeiro.api.model.realese.RealeseEntity;
+import com.aliniribeiro.api.security.ProfileEnum;
 
 @Entity
 @Table(name = "employee")

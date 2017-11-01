@@ -1,4 +1,4 @@
-package com.aliniribeiro.api.common;
+package com.aliniribeiro.api.security;
 
 public enum ProfileEnum {
 	ROLE_ADMIN,
