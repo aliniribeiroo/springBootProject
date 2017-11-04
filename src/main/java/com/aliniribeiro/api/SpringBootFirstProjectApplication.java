@@ -15,7 +15,6 @@ public class SpringBootFirstProjectApplication {
 	@Autowired
 	private CompanyRepository companyRepository;
 	
-	@Value("${command.runnerTest}")
 	private int commandRunner;
 	
 	
@@ -50,7 +49,7 @@ public class SpringBootFirstProjectApplication {
 //			
 //			System.out.println("Senha válida : " + PasswordCommon.validatePassword("123456", passwordEncoded));
 			
-			System.out.println("#### Testando em 1, 2, 3 ...." + this.commandRunner);
+			System.out.println("#### Testando em 1, 2, 3 ....");
 		};
 	}
 }
