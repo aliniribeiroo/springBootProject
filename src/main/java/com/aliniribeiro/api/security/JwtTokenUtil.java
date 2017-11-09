@@ -13,8 +13,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-@Component
 @Profile("dev")
+@Component
 public class JwtTokenUtil {
 
 	static final String CLAIM_KEY_USERNAME = "sub";
