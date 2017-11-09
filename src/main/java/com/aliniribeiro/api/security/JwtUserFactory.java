@@ -16,6 +16,7 @@ public class JwtUserFactory {
 
 	/**
 	 * Converte e gera um Usuário com base nos dados do colaborador
+	 * 
 	 * @param employee
 	 * @return
 	 */
@@ -23,12 +24,13 @@ public class JwtUserFactory {
 		return new JwtUser(employee.getId(), employee.getEmail(), employee.getPassword(),
 				mapToGrantedAuthorities(employee.getProfile()));
 	}
-	
+
 	/**
 	 * Converte o perfil do usuário para o formato utilizado no Spring Security
+	 * 
 	 * @return uma lista de GrantedAuthority
 	 */
-	private static List<GrantedAuthority>mapToGrantedAuthorities(ProfileEnum profile){
+	private static List<GrantedAuthority> mapToGrantedAuthorities(ProfileEnum profile) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(profile.toString()));
 		return authorities;

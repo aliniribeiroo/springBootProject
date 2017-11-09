@@ -1,22 +1,25 @@
-package com.aliniribeiro.api.security;
+package com.aliniribeiro.api.security.model;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.aliniribeiro.api.model.employee.EmployeeEntity;
-import com.aliniribeiro.api.model.employee.EmployeeService;
+import com.aliniribeiro.api.security.JwtUserFactory;
 
-public class UserDetailJwtServiceimpl implements UserDetailService {
+@Service
+public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	EmployeeService employeeService;
+	UserService userService;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) {
-		Optional<EmployeeEntity> employee = employeeService.getUserbyEmail(username);
+		Optional<EmployeeEntity> employee = userService.findByEmail(username);
 		
 		if (employee.isPresent()) {
 			return JwtUserFactory.create(employee.get());

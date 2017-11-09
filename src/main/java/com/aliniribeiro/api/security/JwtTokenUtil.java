@@ -15,7 +15,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 @Profile("dev")
-public class JwrToken {
+public class JwtTokenUtil {
 
 	static final String CLAIM_KEY_USERNAME = "sub";
 	static final String CLAIM_KEY_ROLE = "role";
@@ -27,12 +27,13 @@ public class JwrToken {
 	@Value("${jwt.expiration}")
 	private int expiration;
 
+	//Clains é o nome que se da para os atributos dentro do token
 	/**
 	 * Obtém o username contido no token (email).
 	 * @param token
 	 * @return username do token
 	 */
-	public String getTokenUsername(String token) {
+	public String getUsernameFromToken(String token) {
 		String username;
 		try {
 			Claims claims = getClaimsFromToken(token);

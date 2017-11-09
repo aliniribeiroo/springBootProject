@@ -34,7 +34,7 @@ public class EmployeeEntity implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name", nullable = true)
 	private String name;
 	
 	@Column(name = "email", nullable = false)
@@ -43,7 +43,7 @@ public class EmployeeEntity implements Serializable {
 	@Column(name = "password", nullable = false)
 	private String password;
 	
-	@Column(name = "cpf", nullable = false)
+	@Column(name = "cpf", nullable = true)
 	private String cpf;
 	
 	@Column(name = "hourlyvalue", nullable = true)
