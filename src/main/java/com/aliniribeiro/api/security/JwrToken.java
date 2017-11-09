@@ -14,7 +14,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
-@Profile("prod")
+@Profile("dev")
 public class JwrToken {
 
 	static final String CLAIM_KEY_USERNAME = "sub";
