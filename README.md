@@ -3,7 +3,7 @@
 ## Sinopse
 springBootProject é um projeto criado para armazenar estudos envolvendo Spring Boot
 
-## Recnologias utílizadas e Recursos criados
+## Tecnologias utílizadas e Recursos criados
 
  * Java
  * Maven
